@@ -20,9 +20,9 @@ namespace WinFormsProduct
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!((string.IsNullOrEmpty(txtKategoriAdd.Text)) && string.IsNullOrWhiteSpace(txtKategoriAdd.Text)))
+           if (!((string.IsNullOrEmpty(txtKategoriAdd.Text)) && string.IsNullOrWhiteSpace(txtKategoriAdd.Text)))
             {
-                comboKategoriBox.Items.Add(txtKategoriAdd.Text);
+                dataGridView1.Rows.Add(txtKategoriAdd.Text);
             }
             else { MessageBox.Show("Boş Bırakmayınız", "Karakter Hatası!", MessageBoxButtons.OK); }
         }
@@ -39,6 +39,11 @@ namespace WinFormsProduct
 
         private void button2_Click(object sender, EventArgs e)
         {
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

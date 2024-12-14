@@ -32,6 +32,7 @@ namespace WinFormsProduct
                 MessageBox.Show("Başarı", "Test!", msgButton);
                 groupBox1.Visible = false;
                 gbMenu.Visible = true;
+                label3.Text = $"Hoşgeldiniz! {txtUsername.Text}";
             }
             else
             {
@@ -59,13 +60,18 @@ namespace WinFormsProduct
         private void button1_Click(object sender, EventArgs e)
         {
         urunForm urunForm = new urunForm();
-            urunForm.ShowDialog();
+            urunForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             kategoriForm k = new kategoriForm();
-            k.ShowDialog();
+            k.Show();
+        }
+
+        private void labelKategoriPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

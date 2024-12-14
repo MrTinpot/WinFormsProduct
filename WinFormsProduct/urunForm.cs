@@ -30,6 +30,20 @@ namespace WinFormsProduct
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"{txtUrunAd.Text} Başarıyla Eklendi!","Ürün Eklendi!",MessageBoxButtons.OK);
+            if (!(string.IsNullOrEmpty(txtUrunAd.Text))) {
+                var durumAktif = checkDurum.Checked;
+                dgUrun.Rows.Add(txtUrunAd.Text, txtMarka.Text, txtCountry.Text, rtxtDesc.Text, durumAktif);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

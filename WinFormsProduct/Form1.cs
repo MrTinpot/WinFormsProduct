@@ -29,7 +29,7 @@ namespace WinFormsProduct
             if ( loginOk==true)
             {
                 MessageBoxButtons msgButton = MessageBoxButtons.OK;
-                MessageBox.Show("Başarı", "Test!", msgButton);
+                MessageBox.Show("Giriş Başarılı", "Giriş!", msgButton);
                 groupBox1.Visible = false;
                 gbMenu.Visible = true;
                 label3.Text = $"Hoşgeldiniz! {txtUsername.Text}";

@@ -21,5 +21,15 @@ namespace WinFormsProduct
         {
             Form kategori = new kategoriForm();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{txtUrunAd.Text} Başarıyla Eklendi!","Ürün Eklendi!",MessageBoxButtons.OK);
+        }
     }
 }

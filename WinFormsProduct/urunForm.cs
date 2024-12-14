@@ -29,11 +29,12 @@ namespace WinFormsProduct
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{txtUrunAd.Text} Başarıyla Eklendi!","Ürün Eklendi!",MessageBoxButtons.OK);
             if (!(string.IsNullOrEmpty(txtUrunAd.Text))) {
+                MessageBox.Show($"{txtUrunAd.Text} Başarıyla Eklendi!", "Ürün Eklendi!", MessageBoxButtons.OK);
                 var durumAktif = checkDurum.Checked;
                 dgUrun.Rows.Add(txtUrunAd.Text, txtMarka.Text, txtCountry.Text, rtxtDesc.Text, durumAktif);
             }
+            else { MessageBox.Show("Lütfen geçerli bir ürün adı girinz!", "İsim Hatası!", MessageBoxButtons.OK); }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

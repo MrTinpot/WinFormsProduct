@@ -22,9 +22,10 @@ namespace WinFormsProduct
         {
            if (!((string.IsNullOrEmpty(txtKategoriAdd.Text)) && string.IsNullOrWhiteSpace(txtKategoriAdd.Text)))
             {
+                MessageBox.Show($"{txtKategoriAdd.Text} Başarıyla Eklendi!", "Kategori Eklendi!", MessageBoxButtons.OK);
                 dataGridView1.Rows.Add(txtKategoriAdd.Text);
             }
-            else { MessageBox.Show("Boş Bırakmayınız", "Karakter Hatası!", MessageBoxButtons.OK); }
+            else { MessageBox.Show("Boş Bırakmayınız", "İsim Hatası!", MessageBoxButtons.OK); }
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)

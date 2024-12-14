@@ -36,10 +36,10 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbMenu = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.labelUrunPanel = new System.Windows.Forms.Label();
             this.labelKategoriPanel = new System.Windows.Forms.Label();
+            this.labelUrunPanel = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gbMenu.SuspendLayout();
             this.SuspendLayout();
@@ -133,25 +133,16 @@
             this.gbMenu.Text = "Ürün Panel";
             this.gbMenu.Visible = false;
             // 
-            // button1
+            // labelKategoriPanel
             // 
-            this.button1.Location = new System.Drawing.Point(77, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ekle";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(77, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Ekle";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.labelKategoriPanel.AutoSize = true;
+            this.labelKategoriPanel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.labelKategoriPanel.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelKategoriPanel.Location = new System.Drawing.Point(50, 81);
+            this.labelKategoriPanel.Name = "labelKategoriPanel";
+            this.labelKategoriPanel.Size = new System.Drawing.Size(139, 16);
+            this.labelKategoriPanel.TabIndex = 3;
+            this.labelKategoriPanel.Text = "Kategori Ekleme Paneli";
             // 
             // labelUrunPanel
             // 
@@ -164,16 +155,25 @@
             this.labelUrunPanel.TabIndex = 2;
             this.labelUrunPanel.Text = "Ürün Ekleme Paneli";
             // 
-            // labelKategoriPanel
+            // button2
             // 
-            this.labelKategoriPanel.AutoSize = true;
-            this.labelKategoriPanel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.labelKategoriPanel.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelKategoriPanel.Location = new System.Drawing.Point(50, 81);
-            this.labelKategoriPanel.Name = "labelKategoriPanel";
-            this.labelKategoriPanel.Size = new System.Drawing.Size(139, 16);
-            this.labelKategoriPanel.TabIndex = 3;
-            this.labelKategoriPanel.Text = "Kategori Ekleme Paneli";
+            this.button2.Location = new System.Drawing.Point(77, 110);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Ekle";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(77, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Ekle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -190,7 +190,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ürün Yönetim - Kullanıcı Girişi";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

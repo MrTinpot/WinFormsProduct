@@ -225,7 +225,7 @@
             this.Name = "urunForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Ürün Ekle";
+            this.Text = "Ürün Panel";
             this.Load += new System.EventHandler(this.urunForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

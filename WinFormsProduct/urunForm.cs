@@ -19,7 +19,10 @@ namespace WinFormsProduct
         }
         public void urunForm_Load(object sender, EventArgs e)
         {
-            Form kategori = new kategoriForm();
+            DbManagement urunDb = new DbManagement();
+            dgUrun.DataSource = urunDb.DbGetProduct();
+            DbKategori kategoriDb = new DbKategori();
+            cmbKategori.DataSource = kategoriDb.GetKategoriName();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,7 +35,22 @@ namespace WinFormsProduct
             if (!(string.IsNullOrEmpty(txtUrunAd.Text))) {
                 MessageBox.Show($"{txtUrunAd.Text} Başarıyla Eklendi!", "Ürün Eklendi!", MessageBoxButtons.OK);
                 var durumAktif = checkDurum.Checked;
-                dgUrun.Rows.Add(txtUrunAd.Text, txtMarka.Text, txtCountry.Text, rtxtDesc.Text, durumAktif);
+                UrunDatabase urunler = new UrunDatabase()
+                {
+                    UrunAdi = txtUrunAd.Text,
+                    Marka = txtMarka.Text,
+                    Country = txtCountry.Text,
+                    Description = rtxtDesc.Text,
+                    Durum = durumAktif,
+                    Fiyat = Convert.ToDecimal(txtFiyat.Text),
+                    Category = cmbKategori.Text,
+                    Stock = Convert.ToInt32(txtStock.Text)
+                };
+                List<UrunDatabase> urunList = new List<UrunDatabase>();
+                urunList.Add(urunler);
+                DbManagement db = new DbManagement();
+                db.DbAddProduct(urunList);
+                dgUrun.DataSource = db.DbGetProduct();
             }
             else { MessageBox.Show("Lütfen geçerli bir ürün adı girinz!", "İsim Hatası!", MessageBoxButtons.OK); }
         }

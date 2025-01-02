@@ -32,10 +32,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kategori = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,19 +74,11 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(255)))), ((int)(((byte)(250)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.kategori});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(296, 123);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // kategori
-            // 
-            this.kategori.HeaderText = "Kategoriler";
-            this.kategori.Name = "kategori";
-            this.kategori.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -104,6 +95,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kategori Ekle";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(6, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Kategori Adı";
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
@@ -115,16 +116,6 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mevcut Kategoriler";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(6, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Kategori Adı";
             // 
             // kategoriForm
             // 
@@ -138,6 +129,7 @@
             this.Name = "kategoriForm";
             this.ShowIcon = false;
             this.Text = "Kategori Panel";
+            this.Load += new System.EventHandler(this.kategoriForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -151,7 +143,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kategori;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;

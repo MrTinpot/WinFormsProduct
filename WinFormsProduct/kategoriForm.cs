@@ -33,10 +33,6 @@ namespace WinFormsProduct
 
         }
 
-        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -45,6 +41,12 @@ namespace WinFormsProduct
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void kategoriForm_Load(object sender, EventArgs e)
+        {
+            DbKategori kategoriDb = new DbKategori();
+            dataGridView1.DataSource = kategoriDb.GetKategoriList();
         }
     }
 }

@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbFiyat = new System.Windows.Forms.Label();
+            this.txtFiyat = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,12 +47,7 @@
             this.txtMarka = new System.Windows.Forms.TextBox();
             this.txtUrunAd = new System.Windows.Forms.TextBox();
             this.dgUrun = new System.Windows.Forms.DataGridView();
-            this.txtFiyat = new System.Windows.Forms.TextBox();
-            this.lbFiyat = new System.Windows.Forms.Label();
-            this.cmbKategori = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtStock = new System.Windows.Forms.TextBox();
+            this.cmbCat = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgUrun)).BeginInit();
             this.SuspendLayout();
@@ -54,13 +56,15 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(137)))), ((int)(((byte)(145)))));
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.cmbCat);
+            this.groupBox1.Controls.Add(this.btnDelete);
+            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.txtStock);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbKategori);
             this.groupBox1.Controls.Add(this.lbFiyat);
             this.groupBox1.Controls.Add(this.txtFiyat);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -80,17 +84,84 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Ekle";
             // 
-            // button1
+            // btnDelete
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(379, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Kaydet";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.Location = new System.Drawing.Point(384, 197);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(58, 23);
+            this.btnDelete.TabIndex = 19;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEdit.Location = new System.Drawing.Point(306, 197);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(72, 23);
+            this.btnEdit.TabIndex = 18;
+            this.btnEdit.Text = "Güncelle";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(133, 166);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(100, 24);
+            this.txtStock.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(133, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 18);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Stok";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(130, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 18);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Kategori";
+            // 
+            // lbFiyat
+            // 
+            this.lbFiyat.AutoSize = true;
+            this.lbFiyat.Location = new System.Drawing.Point(133, 86);
+            this.lbFiyat.Name = "lbFiyat";
+            this.lbFiyat.Size = new System.Drawing.Size(39, 18);
+            this.lbFiyat.TabIndex = 13;
+            this.lbFiyat.Text = "Fiyat";
+            // 
+            // txtFiyat
+            // 
+            this.txtFiyat.Location = new System.Drawing.Point(133, 107);
+            this.txtFiyat.Name = "txtFiyat";
+            this.txtFiyat.Size = new System.Drawing.Size(100, 24);
+            this.txtFiyat.TabIndex = 12;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.Location = new System.Drawing.Point(242, 196);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(58, 23);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Ekle";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -143,7 +214,7 @@
             // checkDurum
             // 
             this.checkDurum.AutoSize = true;
-            this.checkDurum.Location = new System.Drawing.Point(274, 208);
+            this.checkDurum.Location = new System.Drawing.Point(27, 197);
             this.checkDurum.Name = "checkDurum";
             this.checkDurum.Size = new System.Drawing.Size(72, 22);
             this.checkDurum.TabIndex = 3;
@@ -181,56 +252,15 @@
             this.dgUrun.ReadOnly = true;
             this.dgUrun.Size = new System.Drawing.Size(532, 237);
             this.dgUrun.TabIndex = 2;
-            this.dgUrun.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgUrun.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUrun_CellClick);
             // 
-            // txtFiyat
+            // cmbCat
             // 
-            this.txtFiyat.Location = new System.Drawing.Point(133, 107);
-            this.txtFiyat.Name = "txtFiyat";
-            this.txtFiyat.Size = new System.Drawing.Size(100, 24);
-            this.txtFiyat.TabIndex = 12;
-            // 
-            // lbFiyat
-            // 
-            this.lbFiyat.AutoSize = true;
-            this.lbFiyat.Location = new System.Drawing.Point(133, 86);
-            this.lbFiyat.Name = "lbFiyat";
-            this.lbFiyat.Size = new System.Drawing.Size(39, 18);
-            this.lbFiyat.TabIndex = 13;
-            this.lbFiyat.Text = "Fiyat";
-            // 
-            // cmbKategori
-            // 
-            this.cmbKategori.FormattingEnabled = true;
-            this.cmbKategori.Location = new System.Drawing.Point(133, 47);
-            this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(103, 26);
-            this.cmbKategori.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(130, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 18);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Kategori";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(133, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Stok";
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(133, 166);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(100, 24);
-            this.txtStock.TabIndex = 17;
+            this.cmbCat.FormattingEnabled = true;
+            this.cmbCat.Location = new System.Drawing.Point(134, 49);
+            this.cmbCat.Name = "cmbCat";
+            this.cmbCat.Size = new System.Drawing.Size(99, 26);
+            this.cmbCat.TabIndex = 20;
             // 
             // urunForm
             // 
@@ -265,13 +295,15 @@
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.TextBox txtMarka;
         private System.Windows.Forms.TextBox txtUrunAd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgUrun;
         private System.Windows.Forms.Label lbFiyat;
         private System.Windows.Forms.TextBox txtFiyat;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbKategori;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.ComboBox cmbCat;
     }
 }

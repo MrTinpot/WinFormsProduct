@@ -25,26 +25,33 @@ namespace WinFormsProduct
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            bool loginOk = LoginTry();
+            UserDataBase userdb = new UserDataBase();
+            bool loginOk = userdb.LoginTry(txtUsername.Text,txtPassword.Text);
             if ( loginOk==true)
             {
+                bool adminCheck = userdb.CheckAdmin(txtUsername.Text, txtPassword.Text);
                 MessageBoxButtons msgButton = MessageBoxButtons.OK;
                 MessageBox.Show("Giriş Başarılı", "Giriş!", msgButton);
-                groupBox1.Visible = false;
-                gbMenu.Visible = true;
-                label3.Text = $"Hoşgeldiniz! {txtUsername.Text}";
+                if (adminCheck == true)
+                {
+                    label3.Text = $"Hoşgeldiniz! {txtUsername.Text} Yönetici!";
+                    groupBox1.Visible = false;
+                    gbMenu.Visible = true;
+                    button2.Enabled = true;
+                }
+                else
+                {
+                    label3.Text = $"Hoşgeldiniz! {txtUsername.Text} Kullanıcı!";
+                    groupBox1.Visible = false;
+                    gbMenu.Visible = true;
+                    button2.Enabled = false;
+                }
             }
             else
             {
                 MessageBoxButtons msgButton = MessageBoxButtons.OK;
                 MessageBox.Show("Giriş Başarısız","Hata!",msgButton);
             }
-        }
-        private bool LoginTry() {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
-            {
-                return true;
-            }else { return false; }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,8 +72,8 @@ namespace WinFormsProduct
 
         private void button2_Click(object sender, EventArgs e)
         {
-            kategoriForm k = new kategoriForm();
-            k.Show();
+            UserManage usr = new UserManage();
+            usr.Show();
         }
 
         private void labelKategoriPanel_Click(object sender, EventArgs e)

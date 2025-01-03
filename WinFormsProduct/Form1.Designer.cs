@@ -150,11 +150,11 @@
             this.labelKategoriPanel.AutoSize = true;
             this.labelKategoriPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelKategoriPanel.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelKategoriPanel.Location = new System.Drawing.Point(50, 81);
+            this.labelKategoriPanel.Location = new System.Drawing.Point(62, 82);
             this.labelKategoriPanel.Name = "labelKategoriPanel";
-            this.labelKategoriPanel.Size = new System.Drawing.Size(139, 16);
+            this.labelKategoriPanel.Size = new System.Drawing.Size(107, 16);
             this.labelKategoriPanel.TabIndex = 3;
-            this.labelKategoriPanel.Text = "Kategori Ekleme Paneli";
+            this.labelKategoriPanel.Text = "Kullanıcı Yönetimi";
             this.labelKategoriPanel.Click += new System.EventHandler(this.labelKategoriPanel_Click);
             // 
             // labelUrunPanel
@@ -162,21 +162,22 @@
             this.labelUrunPanel.AutoSize = true;
             this.labelUrunPanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelUrunPanel.Font = new System.Drawing.Font("Lucida Sans Unicode", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelUrunPanel.Location = new System.Drawing.Point(62, 30);
+            this.labelUrunPanel.Location = new System.Drawing.Point(80, 24);
             this.labelUrunPanel.Name = "labelUrunPanel";
-            this.labelUrunPanel.Size = new System.Drawing.Size(118, 16);
+            this.labelUrunPanel.Size = new System.Drawing.Size(72, 16);
             this.labelUrunPanel.TabIndex = 2;
-            this.labelUrunPanel.Text = "Ürün Ekleme Paneli";
+            this.labelUrunPanel.Text = "Ürün Paneli";
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(77, 111);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Ekle";
+            this.button2.Text = "Yönetim";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -188,7 +189,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Ekle";
+            this.button1.Text = "Panel";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

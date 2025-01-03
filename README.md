@@ -1,1 +1,2 @@
-Epic product manager!!!!
+Server = (LocalDb)
+Database = ProductDataBase
